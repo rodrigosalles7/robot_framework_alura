@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.10.12 on linux)" generated="2024-05-22T12:35:01.199828" rpa="false" schemaversion="5">
+<suite id="s1" name="Preenchimento Correto" source="/home/rodrigo/Área de Trabalho/robot_framework_alura/curso-robot/preenchimento_correto.robot">
+<test id="s1-t1" name="Verificar se eh possivel criar mais de um card se preenchermos os campos corretamente" line="29">
+<kw name="Dado que eu acese o Organo" owner="setup_teardown" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-05-22T12:35:01.330988" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:3000/'.</msg>
+<arg>url=http://localhost:3000/</arg>
+<arg>browser=Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-05-22T12:35:01.330678" elapsed="0.861551"/>
+</kw>
+<status status="PASS" start="2024-05-22T12:35:01.329901" elapsed="0.862656"/>
+</kw>
+<kw name="Dado que eu preencha os campos do formulario">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-22T12:35:02.194000" level="INFO">Typing text 'Akemi' into text field 'id:form-nome'.</msg>
+<arg>${CAMPO_NOME}</arg>
+<arg>Akemi</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-22T12:35:02.193456" elapsed="0.094588"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-22T12:35:02.288710" level="INFO">Typing text 'Desenvolvedora' into text field 'id:form-cargo'.</msg>
+<arg>${CAMPO_CARGO}</arg>
+<arg>Desenvolvedora</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-22T12:35:02.288341" elapsed="0.080007"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-22T12:35:02.369051" level="INFO">Typing text 'https://picsum.photos/200/300' into text field 'id:form-imagem'.</msg>
+<arg>${CAMPO_IMAGEM}</arg>
+<arg>https://picsum.photos/200/300</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-22T12:35:02.368675" elapsed="0.092262"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-22T12:35:02.461613" level="INFO">Clicking element 'class:lista-suspensa'.</msg>
+<arg>${CAMPO_TIME}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-22T12:35:02.461256" elapsed="0.048209"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-22T12:35:02.510276" level="INFO">Clicking element '//option[contains(.,'Programação')]'.</msg>
+<arg>${OPCAO_PROGRAMACAO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-22T12:35:02.509817" elapsed="0.047862"/>
+</kw>
+<status status="PASS" start="2024-05-22T12:35:02.192963" elapsed="0.364972"/>
+</kw>
+<kw name="E clique no botao criar card">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-22T12:35:02.559203" level="INFO">Clicking element 'id:form-botao'.</msg>
+<arg>${BOTAO_CARD}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-22T12:35:02.558834" elapsed="0.053669"/>
+</kw>
+<status status="PASS" start="2024-05-22T12:35:02.558379" elapsed="0.054379"/>
+</kw>
+<kw name="Entao identificar 3 cards no time esperado">
+<for flavor="IN RANGE">
+<iter>
+<kw name="Dado que eu preencha os campos do formulario">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-22T12:35:02.615315" level="INFO">Typing text 'Akemi' into text field 'id:form-nome'.</msg>
+<arg>${CAMPO_NOME}</arg>
+<arg>Akemi</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-22T12:35:02.614984" elapsed="0.060281"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-22T12:35:02.675905" level="INFO">Typing text 'Desenvolvedora' into text field 'id:form-cargo'.</msg>
+<arg>${CAMPO_CARGO}</arg>
+<arg>Desenvolvedora</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-22T12:35:02.675562" elapsed="0.068895"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-22T12:35:02.745089" level="INFO">Typing text 'https://picsum.photos/200/300' into text field 'id:form-imagem'.</msg>
+<arg>${CAMPO_IMAGEM}</arg>
+<arg>https://picsum.photos/200/300</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-22T12:35:02.744748" elapsed="0.081548"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-22T12:35:02.826938" level="INFO">Clicking element 'class:lista-suspensa'.</msg>
+<arg>${CAMPO_TIME}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-22T12:35:02.826602" elapsed="0.036283"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-22T12:35:02.863697" level="INFO">Clicking element '//option[contains(.,'Programação')]'.</msg>
+<arg>${OPCAO_PROGRAMACAO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-22T12:35:02.863250" elapsed="0.023925"/>
+</kw>
+<status status="PASS" start="2024-05-22T12:35:02.614588" elapsed="0.272819"/>
+</kw>
+<kw name="E clique no botao criar card">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-22T12:35:02.888353" level="INFO">Clicking element 'id:form-botao'.</msg>
+<arg>${BOTAO_CARD}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-22T12:35:02.888050" elapsed="0.035450"/>
+</kw>
+<status status="PASS" start="2024-05-22T12:35:02.887658" elapsed="0.036061"/>
+</kw>
+<var name="${i}">1</var>
+<status status="PASS" start="2024-05-22T12:35:02.614138" elapsed="0.309685"/>
+</iter>
+<iter>
+<kw name="Dado que eu preencha os campos do formulario">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-22T12:35:02.924954" level="INFO">Typing text 'Akemi' into text field 'id:form-nome'.</msg>
+<arg>${CAMPO_NOME}</arg>
+<arg>Akemi</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-22T12:35:02.924630" elapsed="0.060200"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-22T12:35:02.985464" level="INFO">Typing text 'Desenvolvedora' into text field 'id:form-cargo'.</msg>
+<arg>${CAMPO_CARGO}</arg>
+<arg>Desenvolvedora</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-22T12:35:02.985129" elapsed="0.067085"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-22T12:35:03.052899" level="INFO">Typing text 'https://picsum.photos/200/300' into text field 'id:form-imagem'.</msg>
+<arg>${CAMPO_IMAGEM}</arg>
+<arg>https://picsum.photos/200/300</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-22T12:35:03.052529" elapsed="0.079709"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-22T12:35:03.132862" level="INFO">Clicking element 'class:lista-suspensa'.</msg>
+<arg>${CAMPO_TIME}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-22T12:35:03.132540" elapsed="0.033521"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-22T12:35:03.167075" level="INFO">Clicking element '//option[contains(.,'Programação')]'.</msg>
+<arg>${OPCAO_PROGRAMACAO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-22T12:35:03.166585" elapsed="0.021545"/>
+</kw>
+<status status="PASS" start="2024-05-22T12:35:02.924285" elapsed="0.264077"/>
+</kw>
+<kw name="E clique no botao criar card">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-22T12:35:03.189264" level="INFO">Clicking element 'id:form-botao'.</msg>
+<arg>${BOTAO_CARD}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-22T12:35:03.188960" elapsed="0.032123"/>
+</kw>
+<status status="PASS" start="2024-05-22T12:35:03.188601" elapsed="0.032775"/>
+</kw>
+<var name="${i}">2</var>
+<status status="PASS" start="2024-05-22T12:35:02.924033" elapsed="0.297452"/>
+</iter>
+<var>${i}</var>
+<value>1</value>
+<value>3</value>
+<status status="PASS" start="2024-05-22T12:35:02.613783" elapsed="0.607813"/>
+</for>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-05-22T12:35:08.222290" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-05-22T12:35:03.221817" elapsed="5.000781"/>
+</kw>
+<status status="PASS" start="2024-05-22T12:35:02.613373" elapsed="5.609441"/>
+</kw>
+<kw name="Fechar o navegador" owner="setup_teardown" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-05-22T12:35:08.223736" elapsed="0.062191"/>
+</kw>
+<status status="PASS" start="2024-05-22T12:35:08.223267" elapsed="0.062883"/>
+</kw>
+<status status="PASS" start="2024-05-22T12:35:01.328720" elapsed="6.957583"/>
+</test>
+<status status="PASS" start="2024-05-22T12:35:01.202344" elapsed="7.084685"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Preenchimento Correto">Preenchimento Correto</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

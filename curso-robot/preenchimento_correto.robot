@@ -1,5 +1,8 @@
 *** Settings ***
-Library    SeleniumLibrary
+Library          SeleniumLibrary
+Resource         setup_teardown.robot
+Test Setup       Dado que eu acese o Organo
+Test Teardown    Fechar o navegador
 
 *** Variables ***
 ${URL}                    http://localhost:3000/
@@ -18,17 +21,18 @@ ${OPCAO_INOVACAO}         //option[contains(.,'Inovação e Gestão')]
 
 *** Test Cases ***
 Verificar se ao preencher os campos do formulario corretamente os dados sao inseridos na lista e se um novo card eh criado no time esperado
-    Dado que eu acese o Organo
-    E preencha os campos do formulario
+   
+    Dado que eu preencha os campos do formulario
     E clique no botao criar card
     Entao identificar o card no time esperado
 
+Verificar se eh possivel criar mais de um card se preenchermos os campos corretamente
+    Dado que eu preencha os campos do formulario
+    E clique no botao criar card
+    Entao identificar 3 cards no time esperado
+
 *** Keywords ***
-
-Dado que eu acese o Organo
-    Open Browser    url=http://localhost:3000/    browser=Chrome
-
-E preencha os campos do formulario
+Dado que eu preencha os campos do formulario
     Input Text       ${CAMPO_NOME}      Akemi
     Input Text       ${CAMPO_CARGO}     Desenvolvedora
     Input Text       ${CAMPO_IMAGEM}    https://picsum.photos/200/300
@@ -40,3 +44,10 @@ E clique no botao criar card
 
 Entao identificar o card no time esperado
     Element Should Be Visible    class:colaborador
+
+Entao identificar 3 cards no time esperado
+    FOR    ${i}    IN RANGE    1    3 
+        Dado que eu preencha os campos do formulario
+        E clique no botao criar card
+    END
+    Sleep    5s
